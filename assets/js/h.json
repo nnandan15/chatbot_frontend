@@ -1,0 +1,405 @@
+{
+    "data": {
+        "PH": {
+            "Eastern_intake_ph": [
+                "8.2",
+                "7.9",
+                "8.1",
+                "8.1"
+            ],
+            "Western_intake_ph": [
+                "8.1",
+                "8.0",
+                "8.0",
+                "8.2"
+            ],
+            "Eastern_middle_ph": [
+                "8.1",
+                "8.0",
+                "8.1",
+                "8.1"
+            ],
+            "Western_middle_ph": [
+                "8.2",
+                "8.0",
+                "8.1",
+                "8.1"
+            ],
+            "Eastern_drawl_ph": [
+                "8.1",
+                "8.0",
+                "8.0",
+                "8.0"
+            ],
+            "Western_drawl_ph": [
+                "8.2",
+                "8.0",
+                "8.2",
+                "8.1"
+            ],
+            "Eastern_intake_ph_5days": [
+                8.08,
+                8.1,
+                8.3,
+                8.5,
+                7.9
+            ],
+            "Western_intake_ph_5days": [
+                8.07,
+                8.12,
+                8.1,
+                7.98,
+                8.2
+            ],
+            "Eastern_middle_ph_5days": [
+                8.08,
+                8.22,
+                8.1,
+                8.3,
+                8.1
+            ],
+            "Western_middle_ph_5days": [
+                8.1,
+                8.12,
+                8.0,
+                8.05,
+                8.2
+            ],
+            "Eastern_drawl_ph_5days": [
+                8.03,
+                8.1,
+                8.2,
+                8.1,
+                8.0
+            ],
+            "Western_drawl_ph_5days": [
+                8.12,
+                8.15,
+                8.03,
+                8.11,
+                8.3
+            ]
+        },
+        "conductivity": {
+            "Eastern_intake_conductivity": [
+                "280.0",
+                "290.0",
+                "280.0",
+                "300.0"
+            ],
+            "Western_intake_conductivity": [
+                "290.0",
+                "300.0",
+                "290.0",
+                "290.0"
+            ],
+            "Eastern_middle_conductivity": [
+                "290.0",
+                "280.0",
+                "280.0",
+                "300.0"
+            ],
+            "Western_middle_conductivity": [
+                "290.0",
+                "300.0",
+                "290.0",
+                "280.0"
+            ],
+            "Eastern_drawl_conductivity": [
+                "290.0",
+                "290.0",
+                "290.0",
+                "290.0"
+            ],
+            "Western_drawl_conductivity": [
+                "300.0",
+                "280.0",
+                "290.0",
+                "300.0"
+            ],
+            "Eastern_intake_conductivity_5days": [
+                287.5,
+                292.5,
+                290.0,
+                293.5,
+                299.0
+            ],
+            "Western_intake_conductivity_5days": [
+                292.5,
+                295.0,
+                291.0,
+                294.0,
+                296.6
+            ],
+            "Eastern_middle_conductivity_5days": [
+                287.5,
+                292.5,
+                295.5,
+                293.0,
+                300.0
+            ],
+            "Western_middle_conductivity_5days": [
+                290.0,
+                300.0,
+                291.0,
+                296.5,
+                298.0
+            ],
+            "Eastern_drawl_conductivity_5days": [
+                290.0,
+                287.5,
+                300.0,
+                299.0,
+                294.0
+            ],
+            "Western_drawl_conductivity_5days": [
+                292.5,
+                297.5,
+                293.0,
+                296.0,
+                299.0
+            ]
+        },
+        "chloride": {
+            "Eastern_intake_chloride": [
+                "16",
+                "16",
+                "18",
+                "18"
+            ],
+            "Western_intake_chloride": [
+                "18",
+                "16",
+                "18",
+                "18"
+            ],
+            "Eastern_middle_chloride": [
+                "18",
+                "18",
+                "20",
+                "18"
+            ],
+            "Western_middle_chloride": [
+                "18",
+                "18",
+                "18",
+                "16"
+            ],
+            "Eastern_drawl_chloride": [
+                "16",
+                "18",
+                "18",
+                "16"
+            ],
+            "Western_drawl_chloride": [
+                "18",
+                "16",
+                "16",
+                "18"
+            ],
+            "Eastern_intake_chloride_5days": [
+                17.0,
+                16.5,
+                16.5,
+                17.0,
+                17.5
+            ],
+            "Western_intake_chloride_5days": [
+                17.5,
+                17.0,
+                17.0,
+                16,
+                5,
+                16.0
+            ],
+            "Eastern_middle_chloride_5days": [
+                18.5,
+                18.5,
+                16.0,
+                17.0,
+                17.5
+            ],
+            "Western_middle_chloride_5days": [
+                17.5,
+                17.0,
+                17.0,
+                16.5,
+                16
+            ],
+            "Eastern_drawl_chloride_5days": [
+                17.0,
+                16.5,
+                17.5,
+                16.5,
+                16.5
+            ],
+            "Western_drawl_chloride_5days": [
+                17.0,
+                16.5,
+                16.5,
+                17.0,
+                17.5
+            ]
+        },
+        "do": {
+            "Eastern_intake_do": [
+                "6.2",
+                "4.7",
+                "5.9",
+                "7.6"
+            ],
+            "Western_intake_do": [
+                "8.0",
+                "7.9",
+                "5.1",
+                "8.4"
+            ],
+            "Eastern_middle_do": [
+                "8.0",
+                "7.4",
+                "5.4",
+                "8.3"
+            ],
+            "Western_middle_do": [
+                "6.9",
+                "7.4",
+                "5.1",
+                "7.3"
+            ],
+            "Eastern_drawl_do": [
+                "5.6",
+                "7.5",
+                "5.8",
+                "7.4"
+            ],
+            "Western_drawl_do": [
+                "6.6",
+                "7.0",
+                "7.0",
+                "6.6"
+            ],
+            "Eastern_intake_do_5days": [
+                6.1,
+                6.57,
+                6.5,
+                6.3,
+                6.75
+            ],
+            "Western_intake_do_5days": [
+                7.35,
+                7.18,
+                6.1,
+                6.44,
+                6.6
+            ],
+            "Eastern_middle_do_5days": [
+                7.28,
+                7.75,
+                7.1,
+                7.23,
+                7.5
+            ],
+            "Western_middle_do_5days": [
+                6.67,
+                6.73,
+                7.4,
+                7.25,
+                7.3
+            ],
+            "Eastern_drawl_do_5days": [
+                6.57,
+                6.88,
+                6.4,
+                6.6,
+                6.7
+            ],
+            "Western_drawl_do_5days": [
+                6.8,
+                6.52,
+                6.2,
+                6.6,
+                6.5
+            ]
+        },
+        "ecoli": {
+            "Eastern_intake_ecoli": [
+                "+VE",
+                "+VE",
+                "+VE",
+                "+VE"
+            ],
+            "Western_intake_ecoli": [
+                "+VE",
+                "+VE",
+                "+VE",
+                "+VE"
+            ],
+            "Eastern_middle_ecoli": [
+                "+VE",
+                "+VE",
+                "+VE",
+                "+VE"
+            ],
+            "Western_middle_ecoli": [
+                "+VE",
+                "+VE",
+                "+VE",
+                "+VE"
+            ],
+            "Eastern_drawl_ecoli": [
+                "+VE",
+                "+VE",
+                "+VE",
+                "+VE"
+            ],
+            "Western_drawl_ecoli": [
+                "+VE",
+                "+VE",
+                "+VE",
+                "+VE"
+            ],
+            "Eastern_intake_ecoli_5days": [
+                "+VE",
+                "+VE",
+                "+VE",
+                "+VE",
+                "+VE"
+            ],
+            "Western_intake_ecoli_5days": [
+                "+VE",
+                "+VE",
+                "+VE",
+                "+VE",
+                "+VE"
+            ],
+            "Eastern_middle_ecoli_5days": [
+                "+VE",
+                "+VE",
+                "+VE",
+                "+VE",
+                "+VE"
+            ],
+            "Western_middle_ecoli_5days": [
+                "+VE",
+                "+VE",
+                "+VE",
+                "+VE",
+                "+VE"
+            ],
+            "Eastern_drawl_ecoli_5days": [
+                "+VE",
+                "+VE",
+                "+VE",
+                "+VE",
+                "+VE"
+            ],
+            "Western_drawl_ecoli_5days": [
+                "+VE",
+                "+VE",
+                "+VE",
+                "+VE",
+                "+VE"
+            ]
+        }
+    }
+}

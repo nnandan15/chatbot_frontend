@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>Dharani</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="assets/js/custom.js"></script>
+        <script src="https://markjivko.com/dist/recorder.js"></script>
+    </head>
+    <body>     
+        <div>
+            <button class="btn btn-info chat_icon" type="button">
+                <i class="fas fa-comments"></i>
+            </button>
+        </div>
+        <div class="chat_box">
+            <div class="chat__header">
+                <img id="ev_tb_img" src="https://gsr-web.s3.amazonaws.com/prod/uploads/2020/02/Best-Sneaker-Bots-For-2020-1024x925.jpg" alt="bot">
+            </div>
+            <div class="chat">
+                <div id="chat__wrapper" class="chat__wrapper">
+                    <div id="bot_chat" class="chat__message chat__message-bot">
+                        <div>Hola!</div>
+                        <div>Please select the language first</div>
+                        <div>దయచేసి ముందుగా భాషను ఎంచుకోండి</div>
+                        <div>முதலில் மொழியைத் தேர்ந்தெடுக்கவும்</div>
+                    </div>
+                    <div id="user_chat" class="chat__message chat__message-own">
+                        <button class="lang_name lang_button" id='0' value="en" onclick="lang_sel(this.value)">English</button>
+                    </div>
+                    <div class="chat__message chat__message-own">
+                        <button class="lang_name lang_button" id="1" value="te" onclick="lang_sel(this.value)">తెలుగు</button>
+                    </div>  
+                    <div class="chat__message chat__message-own">  
+                        <button class="lang_name lang_button" id="2" value="ta" onclick="lang_sel(this.value)">தமிழ்</button>
+                    </div>
+                    <div data-role="recordings"></div>
+                </div>
+            </div>
+            <div id="message_input_area" class="chat__form" style="flex-shrink: 2 !important;">
+                <form id="chat__form" >
+                    <input id="text-message" type="text" placeholder="Type your message here ...">
+                    <button type="submit" onclick="send_mes()"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                </form>
+                <div data-role="controls"><button class="recording_status" style="margin-left: -1em;"><i class="fas fa-microphone recording_status_button"></i></button></div>
+            </div>
+            
+            
+        </div>
+        <script>
+                jQuery(document).ready(function () {
+                var $ = jQuery;
+                var myRecorder = {
+                    objects: {
+                        context: null,
+                        stream: null,
+                        recorder: null
+                    },
+                    init: function () {
+                        if (null === myRecorder.objects.context) {
+                            myRecorder.objects.context = new (
+                                    window.AudioContext || window.webkitAudioContext
+                                    );
+                        }
+                    },
+                    start: function () {
+                        $('.recording_status_button').toggleClass('active');
+                        var options = {audio: true, video: false};
+                        navigator.mediaDevices.getUserMedia(options).then(function (stream) {
+                            myRecorder.objects.stream = stream;
+                            myRecorder.objects.recorder = new Recorder(
+                                    myRecorder.objects.context.createMediaStreamSource(stream),
+                                    {numChannels: 1}
+                            );
+                            myRecorder.objects.recorder.record();
+                        }).catch(function (err) {});
+                    },
+                    stop: function (listObject) {
+                        $('.recording_status_button').toggleClass('active');
+                        if (null !== myRecorder.objects.stream) {
+                            myRecorder.objects.stream.getAudioTracks()[0].stop();
+                        }
+                        if (null !== myRecorder.objects.recorder) {
+                            myRecorder.objects.recorder.stop();
+
+                            // Validate object
+                            if (null !== listObject
+                                    && 'object' === typeof listObject
+                                    && listObject.length > 0) {
+                                // Export the WAV file
+                                myRecorder.objects.recorder.exportWAV(function (blob) {
+                                    var url = (window.URL || window.webkitURL)
+                                            .createObjectURL(blob);
+                                    //console.log(blob);
+                                    // Prepare the playback
+                                    var audioObject = $('<audio controls></audio>')
+                                            .attr('src', url);
+
+                                    // Prepare the download link
+                                    // var downloadObject = $('<a>&#9660;</a>')
+                                    //         .attr('href', url)
+                                    //         .attr('download', new Date().toUTCString() + '.wav');
+
+                                    // Wrap everything in a row
+                                    var holderObject = $('<div class="row"></div>')
+                                            .append(audioObject)
+                                            //.append(downloadObject);
+
+                                    // Append to the list
+                                    $('.chat__wrapper').append(holderObject);
+
+                                    const myFile = new File([blob], "nandan.wav", {
+                                        type: blob.type,
+                                    });
+                                    console.log(myFile);
+
+                                    var formdata = new FormData();
+                                    formdata.append("file", myFile);
+                                    var requestOptions = {
+                                        method: 'POST',
+                                        body: formdata,
+                                        Headers:{
+                                            'Content-Type': 'file',
+                                        }
+                                    };
+                                    fetch("http://3.138.189.39:5001/audio_upload", requestOptions)
+                                    .then(response => response.text())
+                                    .then(result => {
+                                        var message = "nandan.wav";
+                                        var x; var y;
+                                        x = document.getElementById("dt_field").innerHTML;
+                                        y = document.getElementById("lang_selected").innerHTML;
+                                        $('#text-message').val('');
+                                        if (message!=''){
+                                            console.log(message);
+                                            data = {"query":null,"Id":uniq_id,"lang_code":y,"dt_field":x,"audio_file":"nandan.wav"};
+                                            console.log(data);
+                                            fetch('http://3.138.189.39:5001/bot', {
+                                            method: 'POST',
+                                            headers: {
+                                                'Content-Type': 'application/json',
+                                            },
+                                            body: JSON.stringify(data),
+                                            }).then(response => response.json())
+                                            .then(data => {
+                                                console.log('Success:', data);
+                                                var question = data.question_text;
+                                                var response1 = data.response;
+                                                $('.chat__wrapper').append('<div id="bot_chat" class="chat__message chat__message-own">'+'<div>'+response1+'</div>'+'</div>');
+                                                $('.chat__wrapper').append('<div id="bot_chat" class="chat__message chat__message-bot">'+'<div>'+question+'</div>'+'</div>');
+                                                var audiofl = data.audio_file;
+                                                var a = new Audio(audiofl);
+                                                a.play();
+                                                dt_f = data.dt_field;
+                                                $("#dt_field").html(dt_f);
+                                            }).catch((error) => {
+                                                console.error('Error:', error);
+                                            });
+                                        }
+                                    })
+                                    .catch(error => console.log('error', error));
+
+                                    
+                                });
+                            }
+                        }
+                    }
+                };
+
+                // Prepare the recordings list
+                var listObject = $('[data-role="recordings"]');
+
+                // Prepare the record button
+                $('[data-role="controls"] > button').click(function () {
+                    // Initialize the recorder
+                    myRecorder.init();
+
+                    // Get the button state 
+                    var buttonState = !!$(this).attr('data-recording');
+
+                    // Toggle
+                    if (!buttonState) {
+                        $(this).attr('data-recording', 'true');
+                        myRecorder.start();
+                    } else {
+                        $(this).attr('data-recording', '');
+                        myRecorder.stop(listObject);
+                    }
+                });
+            });
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
